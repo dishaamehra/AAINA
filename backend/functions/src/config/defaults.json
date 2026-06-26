@@ -1,0 +1,52 @@
+{
+  "engineVersion": "v1.0",
+  "riskModel": "v1.2",
+  "priorityModel": "v1.1",
+  "confidenceThreshold": 0.7,
+  "retryCount": 2,
+  "geminiModel": "gemini-2.5-pro",
+  "promptVersion": "v1.0",
+  "riskWeights": {
+    "deadline": 0.25,
+    "remainingWork": 0.25,
+    "historicalDelay": 0.2,
+    "burnout": 0.15,
+    "dependencyRisk": 0.1,
+    "planningFallacy": 0.05
+  },
+  "probabilityWeights": {
+    "historicalCompletionRate": 0.3,
+    "availableHours": 0.25,
+    "estimationAccuracy": 0.2,
+    "taskDifficulty": 0.15,
+    "dependencies": 0.1
+  },
+  "priorityWeights": {
+    "importance": 0.3,
+    "deadline": 0.25,
+    "dependency": 0.15,
+    "risk": 0.1,
+    "userPreference": 0.1,
+    "energyMatch": 0.1
+  },
+  "focusWeights": {
+    "deepWork": 0.35,
+    "completionRate": 0.25,
+    "consistency": 0.2,
+    "interruptions": 0.1,
+    "planningAccuracy": 0.1
+  },
+  "burnoutWeights": {
+    "continuousWork": 0.3,
+    "heavyDays": 0.25,
+    "recoveryTime": 0.2,
+    "sleep": 0.15,
+    "interruptions": 0.1
+  },
+  "defaultFocusDNA": {
+    "planningAccuracy": 0.7,
+    "averageEstimationError": 0.25,
+    "deepWorkCapacityMinutes": 90,
+    "bestFocusHours": []
+  }
+}

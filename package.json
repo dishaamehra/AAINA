@@ -1,0 +1,32 @@
+{
+  "name": "aaina",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AAINA — AI-powered Decision Intelligence Platform",
+  "workspaces": [
+    "frontend",
+    "backend/functions",
+    "shared"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=@aaina/shared && npm run build --workspace=@aaina/functions && npm run build --workspace=@aaina/frontend",
+    "lint": "npm run lint --workspaces --if-present",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "typecheck": "npm run typecheck --workspace=@aaina/shared && npm run typecheck --workspace=@aaina/functions && npm run typecheck --workspace=@aaina/frontend"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.46.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
