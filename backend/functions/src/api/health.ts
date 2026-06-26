@@ -12,7 +12,8 @@ export const healthCheck = onRequest(
         service: 'aaina-api',
       },
       metadata: {
-        timestamp: new Date().toISOString(),
+        requestId: crypto.randomUUID(),
+        timestamp: new Date().toISOString()
       },
     };
 

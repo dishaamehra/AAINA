@@ -4,4 +4,7 @@ if (!admin.apps.length) {
   admin.initializeApp();
 }
 
-export { admin };
+const db = admin.firestore();
+const adminAuth = admin.auth();
+
+export { admin, db, adminAuth };

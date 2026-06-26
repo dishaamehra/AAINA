@@ -1,17 +1,28 @@
-export interface ApiResponse<T = unknown> {
-  success: boolean;
-  data?: T;
-  metadata?: ApiMetadata;
-  error?: ApiError;
-}
+export type ApiErrorCode =
+  | 'BAD_REQUEST'
+  | 'UNAUTHORIZED'
+  | 'FORBIDDEN'
+  | 'NOT_FOUND'
+  | 'METHOD_NOT_ALLOWED'
+  | 'INTERNAL_ERROR'
+  | 'VALIDATION_ERROR';
 
 export interface ApiMetadata {
-  requestId?: string;
-  timestamp?: string;
-  engineVersion?: string;
+  requestId: string;
+  timestamp: string;
 }
 
-export interface ApiError {
-  code: string;
-  message: string;
+export interface ApiSuccessResponse<TData> {
+  success: true;
+  data: TData;
+  metadata: ApiMetadata;
 }
+
+export interface ApiErrorResponse {
+  success: false;
+  code: ApiErrorCode;
+  message: string;
+  metadata: ApiMetadata;
+}
+
+export type ApiResponse<TData> = ApiSuccessResponse<TData> | ApiErrorResponse;

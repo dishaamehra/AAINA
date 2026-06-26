@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "aaina-dev"
-  }
+    "default": "aaina-e301c"
+  },
+  "targets": {},
+  "etags": {}
 }
